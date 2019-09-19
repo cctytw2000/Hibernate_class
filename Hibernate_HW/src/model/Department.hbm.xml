@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019/9/19 ?W?? 10:06:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.Department" table="DEPARTMENT">
+        <id name="deptid" type="int">
+            <column name="DEPTID" />
+            <generator class="native" />
+        </id>
+        <set name="employees" table="EMPLOYEE" inverse="true" lazy="true" cascade="all">
+            <key>
+                <column name="DEPTID" not-null="true"/>
+            </key>
+            <one-to-many class="model.Employee" />
+        </set>
+        <property name="deptname" type="java.lang.String">
+            <column name="DEPTNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

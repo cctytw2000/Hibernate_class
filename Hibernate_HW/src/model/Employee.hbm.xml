@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019/9/19 ?W?? 10:06:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.Employee" table="EMPLOYEE">
+        <id name="empid" type="int">
+            <column name="EMPID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="dept" class="model.Department" fetch="select" insert="true" update="true">
+            <column name="DEPTID" not-null="true"/>
+        </many-to-one>
+        <property name="empname" type="java.lang.String">
+            <column name="EMPNAME" />
+        </property>
+        <property name="salary" type="int">
+            <column name="SALARY" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+    </class>
+</hibernate-mapping>

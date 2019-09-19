@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019/9/18 ?U?? 04:27:28 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.BookDetailBean" table="BOOKDETAIL">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="foreign">
+            <param name="property">book</param>
+            </generator>
+        </id>
+        <one-to-one name="book" class="model.BookBean"></one-to-one>
+        <property name="publisher" type="java.lang.String">
+            <column name="PUBLISHER" />
+        </property>
+        <property name="publisheraddress" type="java.lang.String">
+            <column name="PUBLISHERADDRESS" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.password">password</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/kuanlin?serverTimezone=UTC</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+	 <!--
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.password">passw0rd</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=kuanlin</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+-->
+		<!-- <property name="hibernate.current_session_context_class">thread</property> -->
+
+
+		<property name="hibernate.show_sql">true</property>
+		<mapping resource="model/BuildingBean.hbm.xml" />
+		<mapping resource="model/BookBean.hbm.xml" />
+		<mapping resource="model/BookDetailBean.hbm.xml" />
+		
+		
+		<mapping resource="model/Department.hbm.xml" />
+		<mapping resource="model/Employee.hbm.xml" />
+		
+		
+	</session-factory>
+</hibernate-configuration>
